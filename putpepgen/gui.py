@@ -39,7 +39,7 @@ class MutationPeptideApp(ctk.CTk):
         
         # self.after(100, self.set_app_icon)
         # self.set_app_icon()
-        self.iconbitmap("icons/dna.ico") if os.path.exists("icons/dna.ico") else None
+        self.iconbitmap("assets/icons/dna.ico") if os.path.exists("assets/icons/dna.ico") else None
         
         # Initialize variables
         self.initialize_variables()
@@ -65,11 +65,11 @@ class MutationPeptideApp(ctk.CTk):
         # For Windows and macOS compatibility
         try:
             if os.name == 'nt':  # Windows
-                if os.path.exists("icons/canimmune_icon.ico"):
-                    self.iconbitmap("icons/canimmune_icon.ico")
+                if os.path.exists("assets/icons/canimmune_icon.ico"):
+                    self.iconbitmap("assets/icons/canimmune_icon.ico")
             else:  # macOS or Linux
-                if os.path.exists("icons/canimmune_icon.png"):
-                    icon_img = tk.PhotoImage(file="icons/canimmune_icon.png")
+                if os.path.exists("assets/icons/canimmune_icon.png"):
+                    icon_img = tk.PhotoImage(file="assets/icons/canimmune_icon.png")
                     self.iconphoto(True, icon_img)
         except Exception as e:
             print(f"Could not set application icon: {e}")
@@ -374,7 +374,7 @@ class MutationPeptideApp(ctk.CTk):
         # adding Workflow png
         # Load the image
         try:
-            image_path = "icons/workflow_fig.png"
+            image_path = "assets/icons/workflow_fig.png"
             image = ctk.CTkImage(light_image=Image.open(image_path), size=(int(H*0.7), (W*0.3)))  # Adjust size as needed
 
             # Create a label with the image
@@ -1750,7 +1750,7 @@ class MutationPeptideApp(ctk.CTk):
     </head>
     <body>
         <div class="logo">
-            <img src="icons/canimmune_logo.png" alt="CanImmune Logo" height="80">
+            <img src="assets/icons/canimmune_logo.png" alt="CanImmune Logo" height="80">
         </div>
         <h1>CANIMMUNE-MutPep: Cancer Neoantigen Mutation database construction Report</h1>
         <p><strong>Generated on:</strong> {now}</p>
@@ -2086,7 +2086,7 @@ def show_splash_screen():
     
     # Try to load the logo
     try:
-        logo_path = "icons/canimmune_logo.png"
+        logo_path = "assets/icons/canimmune_logo.png"
         if os.path.exists(logo_path):
             logo_img = Image.open(logo_path)
             logo_img = logo_img.resize((300, 100), Image.LANCZOS)
@@ -2119,7 +2119,7 @@ def setup_application():
     """
     # Create necessary directories
     os.makedirs(DEFAULT_DB_PATH, exist_ok=True)
-    os.makedirs("icons", exist_ok=True)
+    os.makedirs("assets/icons", exist_ok=True)
     os.makedirs("results", exist_ok=True)
     
     # Copy sample data files if they don't exist
@@ -2135,7 +2135,7 @@ def setup_application():
         shutil.copy("resources/sample_mutations.csv", sample_mutations_path)
     
     # Check if the icons directory contains necessary files
-    if not os.path.exists("icons/canimmune_logo.png"):
+    if not os.path.exists("assets/icons/canimmune_logo.png"):
         print("Warning: CanImmune logo not found. The application will use text headers instead.")
 
 if __name__ == "__main__":
