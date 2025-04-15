@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CANIMMUNE-MutPep | database construction Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1, h2, h3 {
+                color: #2B7DE1;
+            }
+            .container {
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .header img {
+                height: 60px;
+                margin-right: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            th {
+                background-color: #2B7DE1;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            .stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px;
+                flex: 1;
+                min-width: 200px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+            .stat-box h3 {
+                margin: 0;
+                font-size: 16px;
+            }
+            .stat-box .value {
+                font-size: 28px;
+                font-weight: bold;
+                color: #2B7DE1;
+                margin: 10px 0;
+            }
+            .status-success {
+                color: #00695C;
+            }
+            .status-warning {
+                color: #FF9800;
+            }
+            .status-error {
+                color: #C62828;
+            }
+            .footer {
+                margin-top: 40px;
+                font-size: 12px;
+                color: #777;
+                text-align: center;
+                border-top: 1px solid #eee;
+                padding-top: 20px;
+            }
+            .logo {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="icons/canimmune_logo.png" alt="CanImmune Logo" height="80">
+        </div>
+        <h1>CANIMMUNE-MutPep: Cancer Neoantigen Mutation database construction Report</h1>
+        <p><strong>Generated on:</strong> 2025-03-25 10:33:47</p>
+        
+        <div class="container">
+            <h2>Summary Statistics</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Total Mutations</h3>
+                    <div class="value">20</div>
+                </div>
+                <div class="stat-box">
+                    <h3>Processed Mutations</h3>
+                    <div class="value" class="status-success">0</div>
+                </div>
+                <div class="stat-box">
+                    <h3>Peptides Generated</h3>
+                    <div class="value" class="status-success">0</div>
+                </div>
+                <div class="stat-box">
+                    <h3>Failed Mutations</h3>
+                    <div class="value" class="status-error">20</div>
+                </div>
+            </div>
+            
+            <h3>Failure Details</h3>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Invalid Transcripts</h3>
+                    <div class="value" class="status-error">20</div>
+                </div>
+                <div class="stat-box">
+                    <h3>Invalid Mutation Format</h3>
+                    <div class="value" class="status-success">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2>Analysis Parameters</h2>
+            <ul>
+                <li><strong>Peptide Window Size:</strong> 9 amino acids</li>
+                <li><strong>Include Sequence Info:</strong> Yes</li>
+                <li><strong>Processing Threads:</strong> 5</li>
+                <li><strong>Input File:</strong> sample.csv</li>
+            </ul>
+        </div>
+    
+    <div class="footer">
+        <p>Generated by CanImmune v1.0.0-dev &copy; 2025</p>
+        <p>Developed at Chen Li Lab / Purcell Lab - Monash University</p>
+    </div>
+    </body>
+    </html>
+    
